@@ -4,6 +4,7 @@ body {
     color: whitesmoke; /* Définit la couleur du texte principal */
     margin: 0; /* Supprime les marges par défaut */
     padding: 0; /* Supprime les espacements intérieurs par défaut */
+    height: 100%;
 }
 
 header {
@@ -59,6 +60,7 @@ button:active {
     align-items: center; /* Centre les éléments horizontalement */
     gap: 30px; /* Ajoute un espacement entre chaque élément */
     padding: 20px; /* Ajoute un espace intérieur autour du contenu */
+    font-style: italic;
 }
 
 /* Bloc contenant le texte et l'image */
@@ -93,124 +95,56 @@ button:active {
     border-radius: 8px; /* Arrondit légèrement les coins de l'image */
 }
 
-/* From Uiverse.io by alexruix */ 
+/* From Uiverse.io by cosnametv */ 
 .loader {
-    width: 80px;
-    height: 50px;
-    position: relative;
+  --color: #a5a5b0;
+  --size: 70px;
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
 }
-  
-.loader-text {
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    color: #C8B6FF;
-    animation: text_713 3.5s ease both infinite;
-    font-size: .8rem;
-    letter-spacing: 1px;
-    margin-bottom: 300px;
+
+.loader span {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
+  animation: keyframes-blink 0.6s alternate infinite linear;
 }
-  
-.load {
-    background-color: #9A79FF;
-    border-radius: 50px;
-    display: block;
-    height: 16px;
-    width: 16px;
-    bottom: 0;
-    position: absolute;
-    transform: translateX(64px);
-    animation: loading_713 3.5s ease both infinite;
+
+.loader span:nth-child(1) {
+  animation-delay: 0ms;
 }
-  
-.load::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #D1C2FF;
-    border-radius: inherit;
-    animation: loading2_713 3.5s ease both infinite;
+
+.loader span:nth-child(2) {
+  animation-delay: 200ms;
 }
-  
-  @keyframes text_713 {
-    0% {
-      letter-spacing: 1px;
-      transform: translateX(0px);
-    }
-  
-    40% {
-      letter-spacing: 2px;
-      transform: translateX(26px);
-    }
-  
-    80% {
-      letter-spacing: 1px;
-      transform: translateX(32px);
-    }
-  
-    90% {
-      letter-spacing: 2px;
-      transform: translateX(0px);
-    }
-  
-    100% {
-      letter-spacing: 1px;
-      transform: translateX(0px);
-    }
+
+.loader span:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.loader span:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.loader span:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+.loader span:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+@keyframes keyframes-blink {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.5) rotate(5deg);
   }
-  
-  @keyframes loading_713 {
-    0% {
-      width: 16px;
-      transform: translateX(0px);
-    }
-  
-    40% {
-      width: 100%;
-      transform: translateX(0px);
-    }
-  
-    80% {
-      width: 16px;
-      transform: translateX(64px);
-    }
-  
-    90% {
-      width: 100%;
-      transform: translateX(0px);
-    }
-  
-    100% {
-      width: 16px;
-      transform: translateX(0px);
-    }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  @keyframes loading2_713 {
-    0% {
-      transform: translateX(0px);
-      width: 16px;
-    }
-  
-    40% {
-      transform: translateX(0%);
-      width: 80%;
-    }
-  
-    80% {
-      width: 100%;
-      transform: translateX(0px);
-    }
-  
-    90% {
-      width: 80%;
-      transform: translateX(15px);
-    }
-  
-    100% {
-      transform: translateX(0px);
-      width: 16px;
-    }
-  }  
+}
