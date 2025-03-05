@@ -148,3 +148,23 @@ button:active {
     transform: scale(1);
   }
 }
+
+.tiktok-container {
+  display: flex;
+  justify-content: flex-start; /* Aligner à gauche */
+  align-items: center; /* Centrer verticalement si besoin */
+  width: fit-content;
+  padding: 10px;
+  border-left: 4px solid #ff0050; /* Bordure stylée TikTok */
+  background-color: #1e1e2e;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+  margin-left: 40px;
+}
+
+.pdp-lakaka {
+  position: absolute;
+  top: 200px; /* Même hauteur que le bloc TikTok */
+  right: 180px; /* Collé à droite */
+}
