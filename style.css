@@ -1,0 +1,216 @@
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Définit la police du texte */
+    background-color: #1e1e2e; /* Définit la couleur de fond du site */
+    color: whitesmoke; /* Définit la couleur du texte principal */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements intérieurs par défaut */
+}
+
+header {
+    background: #282c36; /* Définit la couleur de fond du header */
+    padding: 20px; /* Ajoute un espace intérieur autour du contenu */
+    text-align: center; /* Centre le texte à l'intérieur du header */
+}
+
+nav ul {
+    list-style-type: none; /* Supprime les puces des listes */
+    padding: 0; /* Supprime l'espacement intérieur de la liste */
+    text-align: center; /* Centre les éléments de la liste */
+}
+
+nav ul li {
+    display: inline; /* Affiche les éléments de la liste sur une seule ligne */
+    margin: 10px; /* Ajoute un espacement entre les éléments de la liste */
+}
+
+nav ul li a {
+    color: white; /* Définit la couleur du texte des liens */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-weight: bold; /* Rend le texte en gras */
+}
+
+button {
+    background-color: #1e1e2e; /* Définit la couleur de fond du bouton */
+    color: black; /* Définit la couleur du texte du bouton */
+    border-radius: 10em; /* Rend les coins du bouton très arrondis */
+    font-size: 17px; /* Définit la taille du texte */
+    font-weight: 600; /* Définit l'épaisseur du texte */
+    padding: 1em 2em; /* Définit l'espacement interne du bouton (haut/bas, gauche/droite) */
+    cursor: pointer; /* Change le curseur en pointeur lorsque l'on survole */
+    transition: all 0.3s ease-in-out; /* Ajoute une transition fluide sur toutes les propriétés */
+    border: 1px solid black; /* Ajoute une bordure noire */
+    box-shadow: 0 0 0 0 black; /* Définit l'ombre du bouton par défaut */
+}
+
+button:hover {
+    transform: translateY(-4px) translateX(-2px); /* Déplace légèrement le bouton vers le haut et la gauche lorsqu'il est survolé */
+    box-shadow: 2px 5px 0 0 black; /* Ajoute une ombre pour un effet de relief */
+}
+
+button:active {
+    transform: translateY(2px) translateX(1px); /* Ramène le bouton vers le bas et la droite lorsqu'il est cliqué */
+    box-shadow: 0 0 0 0 black; /* Supprime l'ombre pour un effet d'enfoncement */
+}
+
+/* Conteneur global */
+.container {
+    display: flex; /* Utilise flexbox pour la mise en page */
+    flex-direction: column; /* Dispose les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    gap: 30px; /* Ajoute un espacement entre chaque élément */
+    padding: 20px; /* Ajoute un espace intérieur autour du contenu */
+}
+
+/* Bloc contenant le texte et l'image */
+.image-container {
+    display: flex; /* Utilise flexbox pour disposer le texte et l'image en ligne */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Espacement maximal entre le texte et l'image */
+    background-color: #2d2d47; /* Définit la couleur de fond du conteneur */
+    border-radius: 10px; /* Arrondit légèrement les coins */
+    padding: 20px; /* Ajoute un espacement intérieur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet de relief */
+    width: 90%; /* Définit la largeur du conteneur */
+    max-width: 1200px; /* Limite la largeur maximale */
+}
+
+/* Texte à gauche */
+.image-container p {
+    flex: 1; /* Prend toute la place disponible pour le texte */
+    font-size: 18px; /* Définit la taille du texte */
+    color: #ffffff; /* Définit la couleur du texte */
+    line-height: 1.6; /* Définit l'espacement entre les lignes */
+    font-weight: 500; /* Définit l'épaisseur du texte */
+    margin: 0; /* Supprime les marges par défaut */
+    padding-right: 20px; /* Ajoute un espace entre le texte et l'image */
+    text-align: center;
+}
+
+/* Image à droite */
+.image-container img {
+    width: 350px; /* Définit une largeur fixe pour l'image */
+    height: auto; /* Garde les proportions originales de l'image */
+    border-radius: 8px; /* Arrondit légèrement les coins de l'image */
+}
+
+/* From Uiverse.io by alexruix */ 
+.loader {
+    width: 80px;
+    height: 50px;
+    position: relative;
+}
+  
+.loader-text {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: #C8B6FF;
+    animation: text_713 3.5s ease both infinite;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    margin-bottom: 300px;
+}
+  
+.load {
+    background-color: #9A79FF;
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(64px);
+    animation: loading_713 3.5s ease both infinite;
+}
+  
+.load::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #D1C2FF;
+    border-radius: inherit;
+    animation: loading2_713 3.5s ease both infinite;
+}
+  
+  @keyframes text_713 {
+    0% {
+      letter-spacing: 1px;
+      transform: translateX(0px);
+    }
+  
+    40% {
+      letter-spacing: 2px;
+      transform: translateX(26px);
+    }
+  
+    80% {
+      letter-spacing: 1px;
+      transform: translateX(32px);
+    }
+  
+    90% {
+      letter-spacing: 2px;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      letter-spacing: 1px;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes loading_713 {
+    0% {
+      width: 16px;
+      transform: translateX(0px);
+    }
+  
+    40% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    80% {
+      width: 16px;
+      transform: translateX(64px);
+    }
+  
+    90% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      width: 16px;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes loading2_713 {
+    0% {
+      transform: translateX(0px);
+      width: 16px;
+    }
+  
+    40% {
+      transform: translateX(0%);
+      width: 80%;
+    }
+  
+    80% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    90% {
+      width: 80%;
+      transform: translateX(15px);
+    }
+  
+    100% {
+      transform: translateX(0px);
+      width: 16px;
+    }
+  }  
